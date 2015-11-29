@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<span style="float:right"><a href="http://111.111.111.2:3000">Return to Home Page</a></span>
 <h1>Listing Bookmarks</h1>
 
 <table>
@@ -16,7 +15,7 @@
     <% @bookmarks.each do |bookmark| %>
       <tr>
         <td><%= bookmark.title %></td>
-        <td><a href=<%=bookmark.url%>><%= bookmark.url %></a></td>
+        <td><%= bookmark.url %></td>
         <td><%= link_to 'Show', bookmark %></td>
         <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
         <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
