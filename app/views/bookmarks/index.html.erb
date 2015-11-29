@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Titile</th>
+      <th>Title</th>
       <th>Url</th>
       <th colspan="3"></th>
     </tr>
@@ -14,7 +14,7 @@
   <tbody>
     <% @bookmarks.each do |bookmark| %>
       <tr>
-        <td><%= bookmark.titile %></td>
+        <td><%= bookmark.title %></td>
         <td><%= bookmark.url %></td>
         <td><%= link_to 'Show', bookmark %></td>
         <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
