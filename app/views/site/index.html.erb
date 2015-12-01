@@ -1,0 +1,25 @@
+<h2>Latest Bookmarks</h2>
+<table style="width: 100%">
+  <tbody>
+  <% @bookmarks.each do |bookmark| %>
+    <tr>
+      <td><%= link_to bookmark.title, bookmark.url %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Go to Bookmarks', bookmarks_path %>
+
+<h2>Latest Comments</h2>
+<table style="width: 100%">
+  <tbody>
+  <% @comments.each do |comment| %>
+    <tr>
+      <td><%= comment.message %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<br>
+</table><%= link_to 'Go to comments', comments_path %>
