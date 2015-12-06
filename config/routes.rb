@@ -1,15 +1,17 @@
-Bookmarks::Application.routes.draw do
-  resources :bookmarks
-  resources :profiles, only: [:index, :show]
+Rails.application.routes.draw do
+  #get 'site/index'
 
-  devise_for :users
+  resources :comments
+  resources :bookmarks
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'bookmarks#index'
-
+  
+  #root 'bookmarks#index'
+  
+  root 'site#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
