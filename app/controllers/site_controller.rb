@@ -1,6 +1,6 @@
 class SiteController < ApplicationController
   def index
-  @bookmarks = Bookmark.last(5)
-  @comments = Comment.last(5)
+    @bookmarks = Bookmark.all
+    @comments = Comment.all
   end
 end

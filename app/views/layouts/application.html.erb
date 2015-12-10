@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Bookmarks</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <h2 style="display: inline">Welcome to my site, current time is <span id='ct' ></span> <%= Time.now.strftime("%P") %></h2>
-  <script type="text/javascript">display_ct();</script>
+  <head>
+    <title>Bookmarks</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    </script>
+  </head>
+  <body>
+    <ul id="header">
+      <li class="header-left"><%= link_to 'Home', root_path, id: "homelink", class: "header-text-active" %></li>
+      <li class="header-left"><%= link_to 'Bookmarks', bookmarks_path, id: "bookmarkslink", class: "header-text" %></li>
+      <li class="header-left"><%= link_to 'Comments', comments_path, id: "commentslink", class: "header-text" %></li>
+      <li class="header-right">
+        <% if user_signed_in? %>
+          <a id="userlink" class="header-text"><%= current_user.email %></a>
+          <ul class="sub-header">
+            <li><%= link_to 'Edit profile', edit_user_registration_path, class: "header-text" %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "header-text" %></li>
+          </ul>
+        <% else %>
+          <a id="userlink" class="header-text">Not currently signed in.</a>
+          <ul class="sub-header">
+            <nav id="sub-header-user-layout-out">
+              <li><%= link_to "Sign up", new_user_registration_path, class: "header-text" %></li>
+              <li><%= link_to "Login", new_user_session_path, class: "header-text" %></li>
+            </nav>
+          </ul>
+        <% end %>
+      </li>
+    </ul>
+  
+    <br>
+  
+    <h2 style="display: inline">Welcome to my site, current time is <span id='ct' ></span> <%= Time.now.strftime("%P") %></h2>
+    <script type="text/javascript">display_ct();</script>
 
-  <div style="float: right">
-    <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path %> |
-      <%= link_to "Login", new_user_session_path %>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
     <% end %>
     
-    <% if controller_name == "comments" %>
-      <br>
-      <div style="float: right">
-        <%= link_to 'Go to Bookmarks', bookmarks_path %> |
-        <%= link_to 'Return to homepage', root_path %>
-      </div>
-    <% elsif controller_name == "bookmarks"%>
-      <br>
-      <div style="float: right">
-        <%= link_to 'Go to Comments', comments_path %> |
-        <%= link_to 'Return to homepage', root_path %>
-      </div>
-    <% end %>
-  </div>
-
-  <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
-  
-  <%= yield %>
-</body>
+    <br>
+    
+    <%= yield %>
+  </body>
 </html>
