@@ -20,7 +20,7 @@
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "header-text" %></li>
           </ul>
         <% else %>
-          <a id="userlink" class="header-text">Not currently signed in.</a>
+          <a id="userlink" class="header-text header-text-red">Not currently signed in.</a>
           <ul class="sub-header">
             <nav id="sub-header-user-layout-out">
               <li><%= link_to "Sign up", new_user_registration_path, class: "header-text" %></li>
@@ -42,8 +42,6 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    
-    <br>
     
     <%= yield %>
   </body>

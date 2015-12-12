@@ -1,3 +1,5 @@
+//header
+
 #header {
     list-style-type: none;
     margin: -10px;
@@ -28,12 +30,18 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    background-color: #4CAF50;
+    background-color: #00FF00;
     font-weight: bold;
 }
 
 #header a:hover {
-    background-color: #111;
+    background-color: #111; }
+
+
+//custom blocks for header
+
+#header a.header-text-red {
+    background-color: #FF0000;
 }
 
 //sub header
@@ -49,15 +57,11 @@
   display: none;
   opacity: 0;
   visibility: hidden;
-  -webkit-transiton: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
   -moz-transition: opacity 0.2s;
   -ms-transition: opacity 0.2s;
   -o-transition: opacity 0.2s;
   -transition: opacity 0.2s;
-}
-
-#sub-header-user-layout-out {
-  width: 166px;
 }
 
 .sub-header li {
@@ -73,4 +77,10 @@
     display: block;
     opacity: 1;
     visibility: visible;
+}
+
+//custom blocks for a sub header
+
+.sub-header #sub-header-user-layout-out {
+  width: 166px;
 }
