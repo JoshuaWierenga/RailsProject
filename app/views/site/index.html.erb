@@ -45,9 +45,9 @@
     <tr>
       <% @picturespageone.each do |picture| %>
         <td>
-          <div style="margin: 5px; float: left; width: 250px;">
+          <div style="float: left; width: 250px;">
             <a href=<%= picture.url %>>
-              <img style="width: 100%; height: auto;" src=<%= picture.url %> alt=<%= picture.alt %> width="300" height="200">
+              <img style="width: 100%; height: auto;" src=<%= picture.url %> alt=<%= picture.alt %>>
             </a>
           </div>
         </td>
