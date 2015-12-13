@@ -5,23 +5,24 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
     </script>
   </head>
   <body>
     <ul id="header">
-      <li class="header-left"><%= link_to 'Home', root_path, id: "homelink", class: "header-text-active" %></li>
+      <li class="header-left"><%= link_to 'Home', root_path, id: "homelink", class: "header-text header-text-active" %></li>
       <li class="header-left"><%= link_to 'Bookmarks', bookmarks_path, id: "bookmarkslink", class: "header-text" %></li>
       <li class="header-left"><%= link_to 'Comments', comments_path, id: "commentslink", class: "header-text" %></li>
       <li class="header-left"><%= link_to 'Pictures', pictures_path, id: "pictureslink", class: "header-text" %></li>
       <li class="header-right">
         <% if user_signed_in? %>
-          <a id="userlink" class="header-text"><%= current_user.email %></a>
+          <a id="userlink" class="header-text header-text-arrow hvr-icon-hang"><%= current_user.email %></a>
           <ul class="sub-header">
             <li><%= link_to 'Edit profile', edit_user_registration_path, class: "header-text" %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete, class: "header-text" %></li>
           </ul>
         <% else %>
-          <a id="userlink" class="header-text header-text-red">Not currently signed in.</a>
+          <a id="userlink" class="header-text header-text-arrow header-text-red hvr-icon-hang">Not currently signed in.</a>
           <ul class="sub-header">
             <nav id="sub-header-user-layout-out">
               <li><%= link_to "Sign up", new_user_registration_path, class: "header-text" %></li>

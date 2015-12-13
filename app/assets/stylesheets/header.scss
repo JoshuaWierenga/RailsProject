@@ -25,23 +25,23 @@
 }
 
 #header a.header-text-active {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
     background-color: #00FF00;
     font-weight: bold;
 }
 
 #header a:hover {
-    background-color: #111; }
+    background-color: #111; 
+}
 
 
 //custom blocks for header
 
 #header a.header-text-red {
     background-color: #FF0000;
+}
+
+#header a.header-text-arrow {
+    padding: 14px 25px 14px 16px;
 }
 
 //sub header
@@ -82,5 +82,9 @@
 //custom blocks for a sub header
 
 .sub-header #sub-header-user-layout-out {
-  width: 166px;
+  width: 172px;
+}
+
+.sub-header #sub-header-user-layout-out-active {
+  width: 184px;
 }
