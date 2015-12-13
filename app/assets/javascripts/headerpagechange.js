@@ -1,34 +1,23 @@
-function headerchangehome()
-{
-  document.getElementById('homelink').className = 'header-text-active';
-  document.getElementById('bookmarkslink').className = 'header-text';
-  document.getElementById('commentslink').className = 'header-text';
-  document.getElementById('userinlink').className = 'header-text';
-  document.getElementById('useroutlink').className = 'header-text';
-}
-
 function headerchangebookmarks()
 {
   document.getElementById('homelink').className = 'header-text';
-  document.getElementById('bookmarkslink').className = 'header-text-active';
-  document.getElementById('commentslink').className = 'header-text';
-  document.getElementById('userinlink').className = 'header-text';
-  document.getElementById('useroutlink').className = 'header-text';
+  document.getElementById('bookmarkslink').className = 'header-text-active';;
 }
 
 function headerchangecomments()
 {
   document.getElementById('homelink').className = 'header-text';
-  document.getElementById('bookmarkslink').className = 'header-text';
   document.getElementById('commentslink').className = 'header-text-active';
-  document.getElementById('userinlink').className = 'header-text';
-  document.getElementById('useroutlink').className = 'header-text';
+}
+
+function headerchangepictures()
+{
+  document.getElementById('homelink').className = 'header-text';
+  document.getElementById('pictureslink').className = 'header-text-active';
 }
 
 function headerchangeuser()
 {
   document.getElementById('homelink').className = 'header-text';
-  document.getElementById('bookmarkslink').className = 'header-text';
-  document.getElementById('commentslink').className = 'header-text';
   document.getElementById('userlink').className = 'header-text-active';
 }

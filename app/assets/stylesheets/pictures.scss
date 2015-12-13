@@ -1,0 +1,23 @@
+// Place all the styles related to the pictures controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.image {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 250px;
+}
+
+div.image:hover {
+    border: 1px solid #777;
+}
+div.image img {
+    width: 100%;
+    height: auto;
+}
+
+div.image-desc {
+    padding: 15px;
+    text-align: center;
+}

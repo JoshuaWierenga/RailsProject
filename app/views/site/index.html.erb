@@ -2,23 +2,56 @@
 <br>
 
 <table style="float: left">
-  <tr>
-      <th style="font-size:large;">Latest Bookmarks</th> 
-  </tr>
-  <% @bookmarks.each do |bookmark| %>
+  <thead>
+    <tr>
+      <th style="font-size:large;">Latest Bookmarks</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @bookmarks.each do |bookmark| %>
       <tr>
         <td><%= link_to bookmark.title, bookmark.url %></td>
       </tr>
     <% end %>
+  </body>
 </table>
 
 <table style="float: left">
-  <tr>
-      <th style="font-size:large;">Latest Messages</th> 
-  </tr>
-  <% @comments.each do |comment| %>
+  <thead>
+    <tr>
+      <th style="font-size:large;">Latest Messages</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @comments.each do |comment| %>
       <tr>
         <td><%= comment.message %></td>
       </tr>
     <% end %>
+  </tbody>
+</table>
+
+
+<table style="float: left">
+  <thead>
+    <tr>
+      <th style="font-size:large;">Latest Pictures</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <% @picturespageone.each do |picture| %>
+        <td>
+          <div style="margin: 5px; float: left; width: 250px;">
+            <a href=<%= picture.url %>>
+              <img style="width: 100%; height: auto;" src=<%= picture.url %> alt=<%= picture.alt %> width="300" height="200">
+            </a>
+          </div>
+        </td>
+      <% end %>
+    </tr>
+  </tbody>
 </table>
