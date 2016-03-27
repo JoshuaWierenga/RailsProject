@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'pages/VR_PSVR'
+
+  get 'pages/VR_VIVE'
+
+  get 'pages/VR_RIFT'
+
+  get 'pages/VR'
+
+  get 'pages/2'
+
+  get 'pages/2'
+
+  get 'pages/mypage'
+
   devise_for :users
   #get 'site/index'
 

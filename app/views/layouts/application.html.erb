@@ -5,15 +5,24 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
     </script>
   </head>
   <body>
     <ul id="header">
-      <li class="header-left"><%= link_to 'Home', root_path, id: "homelink", class: "header-text header-text-active" %></li>
+            <li class="header-left"><%= link_to 'Home', root_path, id: "homelink", class: "header-text header-text-active" %></li>
       <li class="header-left"><%= link_to 'Bookmarks', bookmarks_path, id: "bookmarkslink", class: "header-text" %></li>
       <li class="header-left"><%= link_to 'Comments', comments_path, id: "commentslink", class: "header-text" %></li>
       <li class="header-left"><%= link_to 'Pictures', pictures_path, id: "pictureslink", class: "header-text" %></li>
+      <li class="header-left"><%= link_to 'Fonts and Font Sizes', pages_2_path, id: "userlink", class: "header-text" %></li>
+      <li class="header-left"><%= link_to 'Games running on VR', pages_VR_path, id: "vrlink", class: "header-text" %></li>
+      <li class="header-left"><%= link_to 'Oculus Rift', pages_VR_RIFT_path, id: "vrriftlink", class: "header-text" %></li>
+      <li class="header-left"><%= link_to 'HTC Vive', pages_VR_VIVE_path, id: "vrvivelink", class: "header-text" %></li>
+      <li class="header-left"><%= link_to 'Sony PSVR', pages_VR_PSVR_path, id: "vrpsvrlink", class: "header-text" %></li>
+      <% if user_signed_in? %>
+        <% if path_exists?("/pages/" << current_user.id.to_s) %>
+          <li class="header-left"><%= link_to 'Your Page', "/pages/" << current_user.id.to_s, id: "userpage", class: "header-text" %></li>
+        <% end %>
+      <% end %>
       <li class="header-right">
         <% if user_signed_in? %>
           <a id="userlink" class="header-text header-text-arrow hvr-icon-hang"><%= current_user.email %></a>
@@ -44,6 +53,8 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+    
+    <br>
     
     <%= yield %>
   </body>
