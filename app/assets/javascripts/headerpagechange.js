@@ -1,19 +1,7 @@
-function headerchangebookmarks()
+function headerchange(page)
 {
   document.getElementById('homelink').className = 'header-text';
-  document.getElementById('bookmarkslink').className = 'header-text header-text-active';;
-}
-
-function headerchangecomments()
-{
-  document.getElementById('homelink').className = 'header-text';
-  document.getElementById('commentslink').className = 'header-text header-text-active';
-}
-
-function headerchangepictures()
-{
-  document.getElementById('homelink').className = 'header-text';
-  document.getElementById('pictureslink').className = 'header-text header-text-active';
+  document.getElementById(page + 'link').className = 'header-text header-text-active';;
 }
 
 function headerchangeuser()
