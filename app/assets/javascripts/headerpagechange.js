@@ -1,7 +1,7 @@
 function headerchange(page)
 {
   document.getElementById('homelink').className = 'header-text';
-  document.getElementById(page + 'link').className = 'header-text header-text-active';;
+  document.getElementById(page).className = 'header-text header-text-active';
 }
 
 function headerchangeuser()
